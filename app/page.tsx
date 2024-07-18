@@ -40,7 +40,7 @@ export default function Component() {
             <Label htmlFor="fps" className="text-base font-medium">
               FPS
             </Label>
-            <Switch id="fps" aria-label="Toggle FPS" />
+            <Switch id="fps" aria-label="Toggle FPS" className="rounded-full" />
           </div>
         </CardContent>
         <CardFooter>
