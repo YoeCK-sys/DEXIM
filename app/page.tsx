@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Component() {
   return (
-    <div className="flex items-center justify-center min-h-screen"> {/* Contenedor para centrar el card */}
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <Card className="w-full max-w-md bg-background text-foreground p-6 rounded-2xl shadow-lg">
         <CardHeader>
           <div className="flex items-center justify-between">
@@ -52,3 +52,4 @@ export default function Component() {
     </div>
   )
 }
+
