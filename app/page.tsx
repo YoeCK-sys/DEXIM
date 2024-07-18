@@ -9,7 +9,7 @@ import { Progress } from "@/components/ui/progress"
 import { Switch } from "@/components/ui/switch"
 import { Button } from "@/components/ui/button"
 
-export function Component() {
+export default function Component() {
   return (
     <div className="flex justify-center">
       <Card className="w-full max-w-md bg-background text-foreground p-6 rounded-2xl shadow-lg">
