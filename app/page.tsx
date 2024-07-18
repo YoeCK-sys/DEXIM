@@ -24,9 +24,7 @@ export default function Component() {
             </Label>
             <div className="flex items-center space-x-2">
               <span className="font-bold text-lg">5%</span>
-              <Progress value={5} className="w-full bg-muted rounded-full">
-                <div className="h-full bg-primary rounded-full" style={{ width: '5%' }}></div>
-              </Progress>
+              <Progress value={5} className="w-full" />
             </div>
           </div>
           <div className="space-y-2">
@@ -35,9 +33,7 @@ export default function Component() {
             </Label>
             <div className="flex items-center space-x-2">
               <span className="font-bold text-lg">5%</span>
-              <Progress value={5} className="w-full bg-muted rounded-full">
-                <div className="h-full bg-primary rounded-full" style={{ width: '5%' }}></div>
-              </Progress>
+              <Progress value={5} className="w-full" />
             </div>
           </div>
           <div className="flex items-center space-x-2">
@@ -56,3 +52,4 @@ export default function Component() {
     </div>
   )
 }
+
