@@ -1,8 +1,3 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/X2UVftsMnmc
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Progress } from "@/components/ui/progress"
@@ -11,7 +6,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Component() {
   return (
-    <div className="flex justify-center">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <Card className="w-full max-w-md bg-background text-foreground p-6 rounded-2xl shadow-lg">
         <CardHeader>
           <div className="flex items-center justify-between">
