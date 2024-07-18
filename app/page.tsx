@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label"
 import { Progress } from "@/components/ui/progress"
 import { Button } from "@/components/ui/button"
 
-export function Component() {
+export default function Component() {
   return (
     <div className="flex justify-center items-center min-h-screen bg-background">
       <Card className="w-full max-w-sm p-4 bg-card text-card-foreground rounded-lg shadow-lg">
