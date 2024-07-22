@@ -1,14 +1,15 @@
 // pages/index.js o pages/index.tsx
 import React from 'react';
 import { XDXD } from '@/components/component/dexxd';
-import { Login } from '@/components/component/logincompo';
 
-const HomePage = () => {
+
+
+const page2: React.FC = () => {
   return (
     <div>
-      < Login/>
+     < XDXD/>
     </div>
   );
 };
 
-export default HomePage;
+export default page2;
