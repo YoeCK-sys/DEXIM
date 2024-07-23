@@ -85,8 +85,8 @@ export const Login: React.FC = () => {
         </Card>
       </main>
       <footer className="bg-muted p-4 text-center text-sm text-muted-foreground">
-        <h2 className="text-lg font-semibold mb-2">Cheat Sheet</h2>
-        <p>Inicia sesión para activar tus cheats</p>
+        <h2 className="text-lg font-semibold mb-2">Dex Exploit</h2>
+        <p>Inicia Sesion Para Ingresar</p>
       </footer>
       <AnimatePresence>
         {showDialog && (
