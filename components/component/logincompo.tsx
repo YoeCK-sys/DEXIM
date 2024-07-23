@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Dialog from "@/components/component/dialog"; // Importar el componente de diálogo
 import { authenticateUser } from "@/lib/auth";
+import { AnimatePresence } from 'framer-motion'; // Importar AnimatePresence
 
 export const Login: React.FC = () => {
   const [username, setUsername] = useState<string>('');
@@ -87,13 +88,15 @@ export const Login: React.FC = () => {
         <h2 className="text-lg font-semibold mb-2">Cheat Sheet</h2>
         <p>Inicia sesión para activar tus cheats</p>
       </footer>
-      {showDialog && (
-        <Dialog 
-          title="Bienvenido"
-          content={`Hola ${username}, tu cuenta expira el ${expiryDate}.`}
-          onClose={handleDialogClose}
-        />
-      )}
+      <AnimatePresence>
+        {showDialog && (
+          <Dialog 
+            title="Bienvenido"
+            content={`Hola ${username}, tu cuenta expira el ${expiryDate}.`}
+            onClose={handleDialogClose}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };

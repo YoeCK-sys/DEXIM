@@ -1,4 +1,6 @@
+// components/component/dialog.tsx
 import React from 'react';
+import { motion } from 'framer-motion';
 
 interface DialogProps {
   title: string;
@@ -9,15 +11,23 @@ interface DialogProps {
 const Dialog: React.FC<DialogProps> = ({ title, content, onClose }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white p-6 rounded shadow-lg">
-        <h2 className="text-xl font-semibold mb-4">{title}</h2>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.9 }}
+        transition={{ duration: 0.3 }}
+        className="bg-white p-6 rounded-lg shadow-lg"
+        onClick={e => e.stopPropagation()}
+      >
+        <h2 className="text-lg font-semibold">{title}</h2>
         <p>{content}</p>
-        <button onClick={onClose} className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">
+        <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded" onClick={onClose}>
           Aceptar
         </button>
-      </div>
+      </motion.div>
     </div>
   );
 };
 
 export default Dialog;
+
