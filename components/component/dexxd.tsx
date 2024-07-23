@@ -24,7 +24,7 @@ export function XDXD() {
   return (
     <div className="flex flex-col w-full min-h-screen bg-background">
       <header className="flex items-center h-16 px-4 border-b shrink-0 md:px-6">
-        <h1 className="text-lg font-semibold">Cheat Sheet</h1>
+        <h1 className="text-lg font-semibold">Dex Exploit</h1>
       </header>
       <main className="flex-1 overflow-auto p-4 md:p-6">
         <div className="grid gap-6">
@@ -94,8 +94,8 @@ export function XDXD() {
         </div>
       </main>
       <footer className="bg-muted p-4 text-center text-sm text-muted-foreground">
-        <h2 className="text-lg font-semibold mb-2">Cheat Sheet</h2>
-        <p>Activate cheats, mods, and secrets</p>
+        <h2 className="text-lg font-semibold mb-2">Dex Exploit</h2>
+        <p></p>
       </footer>
     </div>
   )
