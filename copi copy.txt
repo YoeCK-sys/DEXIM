@@ -2,7 +2,6 @@
 import users from './users.json';
 import { parseISO, isBefore } from 'date-fns';
 import { getCurrentServerTime } from './time';
-import { format } from 'date-fns'; // Importar la función format
 
 interface User {
   username: string;
@@ -36,8 +35,7 @@ export const authenticateUser = async ({ username, key }: AuthParams) => {
 
       if (isBefore(currentDate, expiryDate)) {
         console.log('Account is still valid.');
-        const formattedExpiryDate = format(expiryDate, 'yyyy-MM-dd'); // Formatear la fecha
-        return { authenticated: true, error: null, expiryDate: formattedExpiryDate };
+        return { authenticated: true, error: null };
       } else {
         console.log('Account has expired.');
         return { authenticated: false, error: "La cuenta ha expirado" };

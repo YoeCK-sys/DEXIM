@@ -5,31 +5,22 @@ import { useRouter } from 'next/navigation'; // Importar el hook correcto
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import Dialog from "@/components/component/dialog"; // Importar el componente de diálogo
 import { authenticateUser } from "@/lib/auth";
 
 export const Login: React.FC = () => {
   const [username, setUsername] = useState<string>('');
   const [key, setKey] = useState<string>('');
   const [error, setError] = useState<string | null>(null);
-  const [showDialog, setShowDialog] = useState<boolean>(false);
-  const [expiryDate, setExpiryDate] = useState<string>('');
   const router = useRouter(); // Hook para la navegación
 
   const handleLogin = async () => {
-    const { authenticated, error: authError, expiryDate = '' } = await authenticateUser({ username, key });
+    const { authenticated, error: authError } = await authenticateUser({ username, key });
     
     if (authenticated) {
-      setExpiryDate(expiryDate);
-      setShowDialog(true);
+      router.push('/page2'); // Redirigir a la página de dashboard
     } else {
       setError(authError ?? 'Error desconocido');
     }
-  };
-
-  const handleDialogClose = () => {
-    setShowDialog(false);
-    router.push('/page2'); // Redirigir a la página de dashboard
   };
 
   const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -87,13 +78,6 @@ export const Login: React.FC = () => {
         <h2 className="text-lg font-semibold mb-2">Cheat Sheet</h2>
         <p>Inicia sesión para activar tus cheats</p>
       </footer>
-      {showDialog && (
-        <Dialog 
-          title="Bienvenido"
-          content={`Hola ${username}, tu cuenta expira el ${expiryDate}.`}
-          onClose={handleDialogClose}
-        />
-      )}
     </div>
   );
 };
