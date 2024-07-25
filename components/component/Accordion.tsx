@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 
 import * as React from "react";
 import { useState } from "react";
@@ -12,17 +12,18 @@ interface AccordionProps {
   content: React.ReactNode;
 }
 
-export const Accordion: React.FC<AccordionProps> = ({ i, expanded, setExpanded, title, content }) => {
+const Accordion: React.FC<AccordionProps> = ({ i, expanded, setExpanded, title, content }) => {
   const isOpen = i === expanded;
 
   return (
-    <>
+    <div className="border rounded-lg overflow-hidden">
       <motion.header
         initial={false}
         animate={{ backgroundColor: isOpen ? "#FF0088" : "#0055FF" }}
+        className={`cursor-pointer p-4 text-white ${isOpen ? 'bg-blue-600' : 'bg-blue-400'}`}
         onClick={() => setExpanded(isOpen ? false : i)}
       >
-        <h2>{title}</h2>
+        <h2 className="text-lg font-semibold">{title}</h2>
       </motion.header>
       <AnimatePresence initial={false}>
         {isOpen && (
@@ -32,45 +33,18 @@ export const Accordion: React.FC<AccordionProps> = ({ i, expanded, setExpanded, 
             animate="open"
             exit="collapsed"
             variants={{
-              open: { opacity: 1, height: "auto" },
-              collapsed: { opacity: 0, height: 0 }
+              open: { opacity: 1, height: "auto", padding: "1rem" },
+              collapsed: { opacity: 0, height: 0, padding: 0 }
             }}
-            transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="bg-gray-100"
           >
             {content}
           </motion.section>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 };
 
-export const AccordionExample: React.FC = () => {
-  const [expanded, setExpanded] = useState<false | number>(0);
-
-  return accordionData.map((item, index) => (
-    <Accordion
-      key={index}
-      i={index}
-      expanded={expanded}
-      setExpanded={setExpanded}
-      title={item.title}
-      content={item.content}
-    />
-  ));
-};
-
-const accordionData = [
-  {
-    title: "Accordion 1",
-    content: <div>Content for Accordion 1</div>
-  },
-  {
-    title: "Accordion 2",
-    content: <div>Content for Accordion 2</div>
-  },
-  {
-    title: "Accordion 3",
-    content: <div>Content for Accordion 3</div>
-  }
-];
+export default Accordion;

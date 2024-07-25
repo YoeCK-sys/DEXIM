@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useState } from "react";
-import { Accordion } from "./Accordion";
+import Accordion from "./Accordion"; // Asegúrate de que la ruta sea correcta
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Switch } from "@/components/ui/switch";
 
@@ -10,16 +10,16 @@ const accordionData = [
   {
     title: "AimBot Free",
     content: (
-      <div className="grid gap-4">
-        <div className="flex items-center justify-between">
+      <div className="space-y-4">
+        <div className="flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-md">
           <span className="text-sm font-medium">AimBot 5%</span>
           <Switch id="god-mode" />
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-md">
           <span className="text-sm font-medium">Dex Anti-Ban</span>
           <Switch id="infinite-ammo" />
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-md">
           <span className="text-sm font-medium">No recoil 3%</span>
           <Switch id="unlock-all-levels" />
         </div>
@@ -29,16 +29,16 @@ const accordionData = [
   {
     title: "Mods",
     content: (
-      <div className="grid gap-4">
-        <div className="flex items-center justify-between">
+      <div className="space-y-4">
+        <div className="flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-md">
           <span className="text-sm font-medium">SOON</span>
           <Switch id="unlimited-health" />
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-md">
           <span className="text-sm font-medium">SOON</span>
           <Switch id="increased-damage" />
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-md">
           <span className="text-sm font-medium">SOON</span>
           <Switch id="faster-movement" />
         </div>
@@ -48,16 +48,16 @@ const accordionData = [
   {
     title: "Secrets",
     content: (
-      <div className="grid gap-4">
-        <div className="flex items-center justify-between">
+      <div className="space-y-4">
+        <div className="flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-md">
           <span className="text-sm font-medium">SOON</span>
           <Switch id="unlock-hidden-levels" />
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-md">
           <span className="text-sm font-medium">SOON</span>
           <Switch id="reveal-all-collectibles" />
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-md">
           <span className="text-sm font-medium">SOON</span>
           <Switch id="activate-developer-mode" />
         </div>
@@ -70,12 +70,12 @@ export function XDXD() {
   const [expanded, setExpanded] = useState<false | number>(0);
 
   return (
-    <div className="flex flex-col w-full min-h-screen bg-background">
-      <header className="flex items-center h-16 px-4 border-b shrink-0 md:px-6">
+    <div className="flex flex-col w-full min-h-screen bg-gray-50">
+      <header className="flex items-center h-16 px-4 border-b bg-blue-600 text-white">
         <h1 className="text-lg font-semibold">Dex Exploit</h1>
       </header>
-      <main className="flex-1 overflow-auto p-4 md:p-6">
-        <div className="grid gap-6">
+      <main className="flex-1 overflow-auto p-4">
+        <div className="space-y-4">
           {accordionData.map((item, index) => (
             <Card key={index}>
               <CardHeader>
@@ -91,9 +91,9 @@ export function XDXD() {
           ))}
         </div>
       </main>
-      <footer className="bg-muted p-4 text-center text-sm text-muted-foreground">
+      <footer className="bg-gray-200 p-4 text-center text-sm text-gray-600">
         <h2 className="text-lg font-semibold mb-2">Dex Exploit</h2>
-        <p></p>
+        <p>Footer content here</p>
       </footer>
     </div>
   );
