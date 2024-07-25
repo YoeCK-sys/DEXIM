@@ -1,13 +1,20 @@
 [
-    {
-      "username": "user1",
-      "key": "password123",
-      "expiryDate": "2024-09-01T00:00:00Z"
-    },
-    {
-        "username": "juan",
-        "key": "juan922",
-        "expiryDate": "2024-09-01T00:00:00Z"
-      }
-  ]
-  
+  {
+    "username": "user1",
+    "key": "key1",
+    "expiryDate": "2024-09-01",
+    "role": "free"
+  },
+  {
+    "username": "user2",
+    "key": "key2",
+    "expiryDate": "2024-12-01",
+    "role": "vip"
+  },
+  {
+    "username": "user3",
+    "key": "key3",
+    "expiryDate": "2025-01-01",
+    "role": "ultimate"
+  }
+]

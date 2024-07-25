@@ -1,13 +1,12 @@
 "use client";
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation'; // Importar el hook correcto
+import { useRouter } from 'next/navigation';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import Dialog from "@/components/component/dialog"; // Importar el componente de diálogo
+import Dialog from "@/components/component/dialog";
 import { authenticateUser } from "@/lib/auth";
-import { AnimatePresence } from 'framer-motion'; // Importar AnimatePresence
 
 export const Login: React.FC = () => {
   const [username, setUsername] = useState<string>('');
@@ -15,13 +14,15 @@ export const Login: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [showDialog, setShowDialog] = useState<boolean>(false);
   const [expiryDate, setExpiryDate] = useState<string>('');
-  const router = useRouter(); // Hook para la navegación
+  const [role, setRole] = useState<string>('');
+  const router = useRouter();
 
   const handleLogin = async () => {
-    const { authenticated, error: authError, expiryDate = '' } = await authenticateUser({ username, key });
-    
+    const { authenticated, error: authError, role: userRole, expiryDate: userExpiryDate } = await authenticateUser({ username, key });
+
     if (authenticated) {
-      setExpiryDate(expiryDate);
+      setExpiryDate(userExpiryDate || '');  // Asegurar que expiryDate no sea undefined
+      setRole(userRole || '');  // Asegurar que role no sea undefined
       setShowDialog(true);
     } else {
       setError(authError ?? 'Error desconocido');
@@ -30,7 +31,13 @@ export const Login: React.FC = () => {
 
   const handleDialogClose = () => {
     setShowDialog(false);
-    router.push('/page2'); // Redirigir a la página de dashboard
+    if (role === 'free') {
+      router.push('/free');
+    } else if (role === 'vip') {
+      router.push('/page3');
+    } else if (role === 'ultimate') {
+      router.push('/page4');
+    }
   };
 
   const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,7 +51,7 @@ export const Login: React.FC = () => {
   return (
     <div className="flex flex-col w-full min-h-screen bg-background">
       <header className="flex items-center h-16 px-4 border-b shrink-0 md:px-6">
-        <h1 className="text-lg font-semibold">Dex Exploit</h1>
+        <h1 className="text-lg font-semibold">Cheat Sheet</h1>
       </header>
       <main className="flex-1 flex items-center justify-center p-4 md:p-6">
         <Card className="w-full max-w-md">
@@ -85,18 +92,16 @@ export const Login: React.FC = () => {
         </Card>
       </main>
       <footer className="bg-muted p-4 text-center text-sm text-muted-foreground">
-        <h2 className="text-lg font-semibold mb-2">Dex Exploit</h2>
-        <p>Inicia Sesion Para Ingresar</p>
+        <h2 className="text-lg font-semibold mb-2">Cheat Sheet</h2>
+        <p>Inicia sesión para activar tus cheats</p>
       </footer>
-      <AnimatePresence>
-        {showDialog && (
-          <Dialog 
-            title="Bienvenido"
-            content={`Hola ${username}, tu cuenta expira el ${expiryDate}.`}
-            onClose={handleDialogClose}
-          />
-        )}
-      </AnimatePresence>
+      {showDialog && (
+        <Dialog 
+          title="Bienvenido"
+          content={`Hola ${username}, tu cuenta es de nivel ${role.toUpperCase()} y expira el ${expiryDate}.`}
+          onClose={handleDialogClose}
+        />
+      )}
     </div>
   );
 };

@@ -2,12 +2,12 @@
 import users from './users.json';
 import { parseISO, isBefore } from 'date-fns';
 import { getCurrentServerTime } from './time';
-import { format } from 'date-fns'; // Importar la función format
 
 interface User {
   username: string;
   key: string;
   expiryDate: string;
+  role: string; // Añadido el campo role
 }
 
 interface AuthParams {
@@ -23,27 +23,16 @@ export const authenticateUser = async ({ username, key }: AuthParams) => {
       const currentDate = await getCurrentServerTime();
       const expiryDate = parseISO(user.expiryDate);
 
-      // Verifica y muestra valores
-      console.log('Current Date:', currentDate.toISOString());
-      console.log('Expiry Date:', expiryDate.toISOString());
-      console.log('User Expiry Date from JSON:', user.expiryDate);
-
-      // Verifica si currentDate y expiryDate son válidas
       if (isNaN(currentDate.getTime()) || isNaN(expiryDate.getTime())) {
-        console.error('Invalid date value');
         return { authenticated: false, error: "Error en la verificación de fechas" };
       }
 
       if (isBefore(currentDate, expiryDate)) {
-        console.log('Account is still valid.');
-        const formattedExpiryDate = format(expiryDate, 'yyyy-MM-dd'); // Formatear la fecha
-        return { authenticated: true, error: null, expiryDate: formattedExpiryDate };
+        return { authenticated: true, error: null, role: user.role, expiryDate: user.expiryDate };
       } else {
-        console.log('Account has expired.');
         return { authenticated: false, error: "La cuenta ha expirado" };
       }
     } catch (error) {
-      console.error('Error while authenticating user:', error);
       return { authenticated: false, error: "Error en el proceso de autenticación" };
     }
   }
