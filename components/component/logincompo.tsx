@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Dialog from "@/components/component/dialog";
 import { authenticateUser } from "@/lib/auth";
+import { AnimatePresence } from 'framer-motion';
 
 export const Login: React.FC = () => {
   const [username, setUsername] = useState<string>('');
@@ -21,8 +22,8 @@ export const Login: React.FC = () => {
     const { authenticated, error: authError, role: userRole, expiryDate: userExpiryDate } = await authenticateUser({ username, key });
 
     if (authenticated) {
-      setExpiryDate(userExpiryDate || '');  // Asegurar que expiryDate no sea undefined
-      setRole(userRole || '');  // Asegurar que role no sea undefined
+      setExpiryDate(userExpiryDate || '');
+      setRole(userRole || '');
       setShowDialog(true);
     } else {
       setError(authError ?? 'Error desconocido');
@@ -95,13 +96,15 @@ export const Login: React.FC = () => {
         <h2 className="text-lg font-semibold mb-2">Cheat Sheet</h2>
         <p>Inicia sesión para activar tus cheats</p>
       </footer>
-      {showDialog && (
-        <Dialog 
-          title="Bienvenido"
-          content={`Hola ${username}, tu cuenta es de nivel ${role.toUpperCase()} y expira el ${expiryDate}.`}
-          onClose={handleDialogClose}
-        />
-      )}
+      <AnimatePresence>
+        {showDialog && (
+          <Dialog 
+            title="Bienvenido"
+            content={`Hola ${username}, tu cuenta es de nivel ${role.toUpperCase()} y expira el ${expiryDate}.`}
+            onClose={handleDialogClose}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };
