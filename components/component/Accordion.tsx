@@ -19,7 +19,7 @@ const Accordion: React.FC<AccordionProps> = ({ i, expanded, setExpanded, title, 
     <div className="border rounded-lg overflow-hidden">
       <motion.header
         initial={false}
-        animate={{ backgroundColor: isOpen ? "#00A859" : "#007A33" }}
+        animate={{ backgroundColor: isOpen ? "#3cea00" : "#3cea00" }}
         className={`cursor-pointer p-4 text-white ${isOpen ? 'bg-green-600' : 'bg-green-400'}`}
         onClick={() => setExpanded(isOpen ? false : i)}
       >

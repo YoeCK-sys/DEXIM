@@ -11,15 +11,15 @@ const accordionData = [
     title: "AimBot Free",
     content: (
       <div className="space-y-4">
-        <div className="flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-md">
+        <div className="flex items-center justify-between p-4 bg-white-200 rounded-lg shadow-md">
           <span className="text-sm font-medium">AimBot 5%</span>
           <Switch id="god-mode" />
         </div>
-        <div className="flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-md">
+        <div className="flex items-center justify-between p-4 bg-white-200 rounded-lg shadow-md">
           <span className="text-sm font-medium">Dex Anti-Ban</span>
           <Switch id="infinite-ammo" />
         </div>
-        <div className="flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-md">
+        <div className="flex items-center justify-between p-4 bg-white-200 rounded-lg shadow-md">
           <span className="text-sm font-medium">No recoil 3%</span>
           <Switch id="unlock-all-levels" />
         </div>
@@ -30,15 +30,15 @@ const accordionData = [
     title: "Mods",
     content: (
       <div className="space-y-4">
-        <div className="flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-md">
+        <div className="flex items-center justify-between p-4 bg-white-200 rounded-lg shadow-md">
           <span className="text-sm font-medium">SOON</span>
           <Switch id="unlimited-health" />
         </div>
-        <div className="flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-md">
+        <div className="flex items-center justify-between p-4 bg-white-200 rounded-lg shadow-md">
           <span className="text-sm font-medium">SOON</span>
           <Switch id="increased-damage" />
         </div>
-        <div className="flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-md">
+        <div className="flex items-center justify-between p-4 bg-white-200 rounded-lg shadow-md">
           <span className="text-sm font-medium">SOON</span>
           <Switch id="faster-movement" />
         </div>
@@ -49,15 +49,15 @@ const accordionData = [
     title: "Secrets",
     content: (
       <div className="space-y-4">
-        <div className="flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-md">
+        <div className="flex items-center justify-between p-4 bg-white-200 rounded-lg shadow-md">
           <span className="text-sm font-medium">SOON</span>
           <Switch id="unlock-hidden-levels" />
         </div>
-        <div className="flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-md">
+        <div className="flex items-center justify-between p-4 bg-white-200 rounded-lg shadow-md">
           <span className="text-sm font-medium">SOON</span>
           <Switch id="reveal-all-collectibles" />
         </div>
-        <div className="flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-md">
+        <div className="flex items-center justify-between p-4 bg-white-200 rounded-lg shadow-md">
           <span className="text-sm font-medium">SOON</span>
           <Switch id="activate-developer-mode" />
         </div>
@@ -91,7 +91,7 @@ export function XDXD() {
           ))}
         </div>
       </main>
-      <footer className="bg-gray-200 p-4 text-center text-sm text-gray-600">
+      <footer className="bg-white-200 p-4 text-center text-sm text-gray-600">
         <h2 className="text-lg font-semibold mb-2">Dex Exploit</h2>
         <p>Footer content here</p>
       </footer>
