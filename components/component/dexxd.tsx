@@ -70,8 +70,8 @@ export function XDXD() {
   const [expanded, setExpanded] = useState<false | number>(0);
 
   return (
-    <div className="flex flex-col w-full min-h-screen bg-gray-50">
-      <header className="flex items-center h-16 px-4 border-b bg-blue-600 text-white">
+    <div className="flex flex-col w-full min-h-screen bg-background">
+      <header className="flex items-center h-16 px-4 border-b shrink-0 md:px-6">
         <h1 className="text-lg font-semibold">Dex Exploit</h1>
       </header>
       <main className="flex-1 overflow-auto p-4">
