@@ -50,19 +50,19 @@ export const Login: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col w-full min-h-screen bg-background">
-      <header className="flex items-center h-16 px-4 border-b shrink-0 md:px-6">
+    <div className="flex flex-col w-full min-h-screen bg-gray-900 text-white">
+      <header className="flex items-center h-16 px-4 border-b border-gray-700 shrink-0 md:px-6">
         <h1 className="text-lg font-semibold">Cheat Sheet</h1>
       </header>
       <main className="flex-1 flex items-center justify-center p-4 md:p-6">
-        <Card className="w-full max-w-md">
+        <Card className="w-full max-w-md bg-gray-800 text-white">
           <CardHeader>
             <CardTitle>Iniciar Sesión</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid gap-4">
               <div>
-                <label htmlFor="username" className="block text-sm font-medium">
+                <label htmlFor="username" className="block text-sm font-medium text-gray-300">
                   Usuario
                 </label>
                 <Input
@@ -70,10 +70,11 @@ export const Login: React.FC = () => {
                   placeholder="Ingresa tu usuario"
                   value={username}
                   onChange={handleUsernameChange}
+                  className="bg-gray-700 text-white"
                 />
               </div>
               <div>
-                <label htmlFor="key" className="block text-sm font-medium">
+                <label htmlFor="key" className="block text-sm font-medium text-gray-300">
                   Clave
                 </label>
                 <Input
@@ -82,19 +83,20 @@ export const Login: React.FC = () => {
                   placeholder="Ingresa tu clave"
                   value={key}
                   onChange={handleKeyChange}
+                  className="bg-gray-700 text-white"
                 />
               </div>
               {error && <p className="text-red-500">{error}</p>}
-              <Button className="w-full mt-4" onClick={handleLogin}>
+              <Button className="w-full mt-4 bg-green-600 hover:bg-green-700" onClick={handleLogin}>
                 Iniciar Sesión
               </Button>
             </div>
           </CardContent>
         </Card>
       </main>
-      <footer className="bg-muted p-4 text-center text-sm text-muted-foreground">
-        <h2 className="text-lg font-semibold mb-2">Cheat Sheet</h2>
-        <p>Inicia sesión para activar tus cheats</p>
+      <footer className="bg-gray-800 p-4 text-center text-sm text-gray-400">
+        <h2 className="text-lg font-semibold mb-2">Dex Exploit</h2>
+        <p>Footer content here</p>
       </footer>
       <AnimatePresence>
         {showDialog && (
