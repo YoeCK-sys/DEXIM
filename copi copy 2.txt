@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface AccordionProps {
@@ -14,34 +14,21 @@ interface AccordionProps {
 
 const Accordion: React.FC<AccordionProps> = ({ i, expanded, setExpanded, title, content }) => {
   const isOpen = i === expanded;
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  const handleClick = useCallback(() => {
-    if (isAnimating) return; // Prevent interaction during animation
-    setIsAnimating(true);
-    setExpanded(isOpen ? false : i);
-  }, [isOpen, i, expanded, setExpanded, isAnimating]);
-
-  const handleAnimationComplete = () => {
-    setIsAnimating(false);
-  };
 
   return (
     <div className="border rounded-lg overflow-hidden">
       <motion.header
         initial={false}
-        animate={{ backgroundColor: isOpen ? "#56d504" : "#56d504" }}
+        animate={{ backgroundColor: isOpen ? "#4abd00" : "#4abd00" }}
         className={`cursor-pointer p-4 text-white ${isOpen ? 'bg-green-600' : 'bg-green-400'}`}
-        onClick={handleClick}
-        aria-expanded={isOpen}
-        aria-controls={`accordion-content-${i}`}
+        onClick={() => setExpanded(isOpen ? false : i)}
       >
         <h2 className="text-lg font-semibold">{title}</h2>
       </motion.header>
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.section
-            key={`accordion-content-${i}`}
+            key="content"
             initial="collapsed"
             animate="open"
             exit="collapsed"
@@ -51,8 +38,6 @@ const Accordion: React.FC<AccordionProps> = ({ i, expanded, setExpanded, title, 
             }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="bg-gray-700"
-            id={`accordion-content-${i}`}
-            onAnimationComplete={handleAnimationComplete} // Reset animation state after complete
           >
             {content}
           </motion.section>
@@ -63,6 +48,3 @@ const Accordion: React.FC<AccordionProps> = ({ i, expanded, setExpanded, title, 
 };
 
 export default Accordion;
-
-
-

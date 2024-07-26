@@ -67,7 +67,7 @@ const accordionData = [
 ];
 
 export function XDXD() {
-  const [expanded, setExpanded] = useState<false | number>(0);
+  const [expanded, setExpanded] = useState<false | number>(false); // Cambiar de 0 a false
 
   return (
     <div className="flex flex-col w-full min-h-screen bg-gray-900 text-white">
@@ -98,3 +98,5 @@ export function XDXD() {
     </div>
   );
 }
+
+
