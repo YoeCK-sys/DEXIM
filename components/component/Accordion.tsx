@@ -16,11 +16,11 @@ const Accordion: React.FC<AccordionProps> = ({ i, expanded, setExpanded, title, 
   const isOpen = i === expanded;
 
   return (
-    <div className="border rounded-lg overflow-hidden w-full mx-auto my-2">
+    <div className="border rounded-lg overflow-hidden">
       <motion.header
         initial={false}
         animate={{ backgroundColor: isOpen ? "#56d504" : "#56d504" }}
-        className={`cursor-pointer p-4 text-white ${isOpen ? 'bg-green-600' : 'bg-green-400'}`}
+        className={cursor-pointer p-4 text-white ${isOpen ? 'bg-green-600' : 'bg-green-400'}}
         onClick={() => setExpanded(isOpen ? false : i)}
       >
         <h2 className="text-lg font-semibold">{title}</h2>
@@ -39,9 +39,7 @@ const Accordion: React.FC<AccordionProps> = ({ i, expanded, setExpanded, title, 
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="bg-gray-700"
           >
-            <div className="p-4">
-              {content}
-            </div>
+            {content}
           </motion.section>
         )}
       </AnimatePresence>
