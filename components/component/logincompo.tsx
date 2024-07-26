@@ -55,14 +55,14 @@ export const Login: React.FC = () => {
         <h1 className="text-lg font-semibold">Cheat Sheet</h1>
       </header>
       <main className="flex-1 flex items-center justify-center p-4 md:p-6">
-        <Card className="w-full max-w-md bg-gray-800 text-white">
+        <Card className="w-full max-w-md bg-gray-800 border border-gray-700 text-white">
           <CardHeader>
             <CardTitle>Iniciar Sesión</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid gap-4">
-              <div>
-                <label htmlFor="username" className="block text-sm font-medium text-gray-300">
+              <div className="flex flex-col">
+                <label htmlFor="username" className="text-sm font-medium mb-1 text-white">
                   Usuario
                 </label>
                 <Input
@@ -70,11 +70,11 @@ export const Login: React.FC = () => {
                   placeholder="Ingresa tu usuario"
                   value={username}
                   onChange={handleUsernameChange}
-                  className="bg-gray-700 text-white"
+                  className="bg-gray-700 text-white placeholder-gray-400 border border-gray-600 rounded-md py-2 px-3 text-base"
                 />
               </div>
-              <div>
-                <label htmlFor="key" className="block text-sm font-medium text-gray-300">
+              <div className="flex flex-col">
+                <label htmlFor="key" className="text-sm font-medium mb-1 text-white">
                   Clave
                 </label>
                 <Input
@@ -83,11 +83,11 @@ export const Login: React.FC = () => {
                   placeholder="Ingresa tu clave"
                   value={key}
                   onChange={handleKeyChange}
-                  className="bg-gray-700 text-white"
+                  className="bg-gray-700 text-white placeholder-gray-400 border border-gray-600 rounded-md py-2 px-3 text-base"
                 />
               </div>
-              {error && <p className="text-red-500">{error}</p>}
-              <Button className="w-full mt-4 bg-green-600 hover:bg-green-700" onClick={handleLogin}>
+              {error && <p className="text-red-400 mt-2">{error}</p>}
+              <Button className="w-full mt-4 bg-green-500 hover:bg-green-600" onClick={handleLogin}>
                 Iniciar Sesión
               </Button>
             </div>
@@ -110,3 +110,4 @@ export const Login: React.FC = () => {
     </div>
   );
 };
+
