@@ -20,7 +20,7 @@ const Accordion: React.FC<AccordionProps> = ({ i, expanded, setExpanded, title, 
       <motion.header
         initial={false}
         animate={{ backgroundColor: isOpen ? "#56d504" : "#56d504" }}
-        className={cursor-pointer p-4 text-white ${isOpen ? 'bg-green-600' : 'bg-green-400'}}
+        className={`cursor-pointer p-4 text-white ${isOpen ? 'bg-green-600' : 'bg-green-400'}`}
         onClick={() => setExpanded(isOpen ? false : i)}
       >
         <h2 className="text-lg font-semibold">{title}</h2>
