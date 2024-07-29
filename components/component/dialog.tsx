@@ -15,7 +15,7 @@ const Dialog: React.FC<DialogProps> = ({ title, content, onClose }) => {
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.9 }}
         transition={{ duration: 0.3 }}
-        className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-md w-full mx-4"
+        className="bg-gradient-to-r from-gray-900 p-6 rounded-lg shadow-lg max-w-md w-full mx-4 bg-opacity-99"
         onClick={e => e.stopPropagation()}
       >
         <h2 className="text-lg font-semibold text-white">{title}</h2>

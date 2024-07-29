@@ -27,11 +27,11 @@ const Accordion: React.FC<AccordionProps> = ({ i, expanded, setExpanded, title, 
   };
 
   return (
-    <div className="border rounded-lg overflow-hidden">
+    <div className="border rounded-lg overflow-hidden bg-opacity-70 backdrop-blur-lg">
       <motion.header
         initial={false}
-        animate={{ backgroundColor: isOpen ? "#56d504" : "#56d504" }}
-        className={`cursor-pointer p-4 text-white ${isOpen ? 'bg-green-600' : 'bg-green-400'}`}
+        animate={{ backgroundColor: isOpen ? "#2c2c2c" : "#2c2c2c" }}
+        className={`cursor-pointer p-4 text-white ${isOpen ? 'bg-gray-700' : 'bg-gray-600'}`}
         onClick={handleClick}
         aria-expanded={isOpen}
         aria-controls={`accordion-content-${i}`}
@@ -50,7 +50,7 @@ const Accordion: React.FC<AccordionProps> = ({ i, expanded, setExpanded, title, 
               collapsed: { opacity: 0, height: 0, padding: 0 }
             }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="bg-gray-700"
+            className="bg-opacity-70 backdrop-blur-lg"
             id={`accordion-content-${i}`}
             onAnimationComplete={handleAnimationComplete} // Reset animation state after complete
           >
@@ -63,6 +63,5 @@ const Accordion: React.FC<AccordionProps> = ({ i, expanded, setExpanded, title, 
 };
 
 export default Accordion;
-
 
 
