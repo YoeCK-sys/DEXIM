@@ -12,7 +12,7 @@ interface AccordionProps {
   content: React.ReactNode;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ i, expanded, setExpanded, title, content }) => {
+const Accordion: React.FC<AccordionProps> = React.memo(({ i, expanded, setExpanded, title, content }) => {
   const isOpen = i === expanded;
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -49,7 +49,7 @@ const Accordion: React.FC<AccordionProps> = ({ i, expanded, setExpanded, title, 
               open: { opacity: 1, height: "auto", padding: "1rem" },
               collapsed: { opacity: 0, height: 0, padding: 0 }
             }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             className="bg-opacity-70 backdrop-blur-lg "
             id={`accordion-content-${i}`}
             onAnimationComplete={handleAnimationComplete} // Reset animation state after complete
@@ -60,7 +60,8 @@ const Accordion: React.FC<AccordionProps> = ({ i, expanded, setExpanded, title, 
       </AnimatePresence>
     </div>
   );
-};
+})
+
 
 export default Accordion;
 
