@@ -77,7 +77,7 @@ export function XDXD() {
       <main className="flex-1 overflow-auto p-4">
         <div className="space-y-4">
           {accordionData.map((item, index) => (
-            <Card key={index} className="bg-gray-800 bg-opacity-0 text-white backdrop-blur-lg border-none w-full">
+            <Card key={index} className="bg-gray-800 bg-opacity-0 text-white backdrop-blur-lg">
               <CardHeader>
                 <Accordion
                   i={index}
