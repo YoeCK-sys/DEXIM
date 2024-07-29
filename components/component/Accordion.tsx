@@ -30,7 +30,7 @@ const Accordion: React.FC<AccordionProps> = React.memo(({ i, expanded, setExpand
     <div className="border rounded-lg overflow-hidden bg-opacity-70 bg-gradient-to-r from-gray-900">
       <motion.header
         initial={false}
-        animate={{ backgroundColor: isOpen ? "#2c2c2c" : "#2c2c2c" }}
+        animate={{ backgroundColor: isOpen ? "#242e9d" : "#242e9d" }}
         className={`cursor-pointer p-4 text-white ${isOpen ? 'bg-gray-700' : 'bg-gray-600'}`}
         onClick={handleClick}
         aria-expanded={isOpen}
