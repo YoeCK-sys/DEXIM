@@ -20,14 +20,14 @@ const Accordion: React.FC<AccordionProps> = React.memo(({ i, expanded, setExpand
     if (isAnimating) return; // Prevent interaction during animation
     setIsAnimating(true);
     setExpanded(isOpen ? false : i);
-  }, [isOpen, i, expanded, setExpanded, isAnimating]);
+  }, [isOpen, i, setExpanded, isAnimating]);
 
   const handleAnimationComplete = () => {
     setIsAnimating(false);
   };
 
   return (
-    <div className="border rounded-lg overflow-hidden bg-opacity-70 backdrop-blur-lg bg-gradient-to-r from-gray-900 ">
+    <div className="border rounded-lg overflow-hidden bg-opacity-70 bg-gradient-to-r from-gray-900">
       <motion.header
         initial={false}
         animate={{ backgroundColor: isOpen ? "#2c2c2c" : "#2c2c2c" }}
@@ -49,8 +49,8 @@ const Accordion: React.FC<AccordionProps> = React.memo(({ i, expanded, setExpand
               open: { opacity: 1, height: "auto", padding: "1rem" },
               collapsed: { opacity: 0, height: 0, padding: 0 }
             }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="bg-opacity-70 backdrop-blur-lg "
+            transition={{ duration: 0.3, ease: "easeInOut" }} // Ajusta la duración si es necesario
+            className="bg-opacity-70"
             id={`accordion-content-${i}`}
             onAnimationComplete={handleAnimationComplete} // Reset animation state after complete
           >
@@ -60,9 +60,9 @@ const Accordion: React.FC<AccordionProps> = React.memo(({ i, expanded, setExpand
       </AnimatePresence>
     </div>
   );
-})
-
+});
 
 export default Accordion;
+
 
 
