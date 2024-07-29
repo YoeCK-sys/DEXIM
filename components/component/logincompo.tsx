@@ -55,7 +55,7 @@ export const Login: React.FC = () => {
         <h1 className="text-lg font-semibold">Dex Exploit</h1>
       </header>
       <main className="flex-1 flex items-center justify-center p-4 md:p-6">
-        <Card className="w-full max-w-md bg-gray-800 bg-opacity-70 border border-gray-700 text-white backdrop-blur-lg">
+        <Card className="w-full max-w-md bg-gray-900 bg-opacity-70 border border-gray-700 text-white backdrop-blur-lg">
           <CardHeader>
             <CardTitle>Iniciar Sesión</CardTitle>
           </CardHeader>
