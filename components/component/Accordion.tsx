@@ -27,7 +27,7 @@ const Accordion: React.FC<AccordionProps> = ({ i, expanded, setExpanded, title, 
   };
 
   return (
-    <div className="border rounded-lg overflow-hidden bg-opacity-70 backdrop-blur-lg">
+    <div className="border rounded-lg overflow-hidden bg-opacity-70 backdrop-blur-lg bg-gradient-to-r from-gray-900">
       <motion.header
         initial={false}
         animate={{ backgroundColor: isOpen ? "#2c2c2c" : "#2c2c2c" }}
@@ -50,7 +50,7 @@ const Accordion: React.FC<AccordionProps> = ({ i, expanded, setExpanded, title, 
               collapsed: { opacity: 0, height: 0, padding: 0 }
             }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="bg-opacity-70 backdrop-blur-lg"
+            className="bg-opacity-70 backdrop-blur-lg "
             id={`accordion-content-${i}`}
             onAnimationComplete={handleAnimationComplete} // Reset animation state after complete
           >

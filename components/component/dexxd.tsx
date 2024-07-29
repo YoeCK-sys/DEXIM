@@ -10,16 +10,16 @@ const accordionData = [
   {
     title: "AimBot Free",
     content: (
-      <div className="space-y-4">
-        <div className="flex items-center justify-between p-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg">
+      <div className="space-y-4 ">
+        <div className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg">
           <span className="text-sm font-medium text-white">AimBot 5%</span>
           <Switch id="god-mode" />
         </div>
-        <div className="flex items-center justify-between p-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg">
+        <div className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg">
           <span className="text-sm font-medium text-white">Dex Anti-Ban</span>
           <Switch id="infinite-ammo" />
         </div>
-        <div className="flex items-center justify-between p-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg">
+        <div className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg">
           <span className="text-sm font-medium text-white">No recoil 3%</span>
           <Switch id="unlock-all-levels" />
         </div>
@@ -30,15 +30,15 @@ const accordionData = [
     title: "Mods",
     content: (
       <div className="space-y-4">
-        <div className="flex items-center justify-between p-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg">
+        <div className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg">
           <span className="text-sm font-medium text-white">SOON</span>
           <Switch id="unlimited-health" />
         </div>
-        <div className="flex items-center justify-between p-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg">
+        <div className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg">
           <span className="text-sm font-medium text-white">SOON</span>
           <Switch id="increased-damage" />
         </div>
-        <div className="flex items-center justify-between p-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg">
+        <div className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg">
           <span className="text-sm font-medium text-white">SOON</span>
           <Switch id="faster-movement" />
         </div>
@@ -49,15 +49,15 @@ const accordionData = [
     title: "Secrets",
     content: (
       <div className="space-y-4">
-        <div className="flex items-center justify-between p-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg">
+        <div className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg">
           <span className="text-sm font-medium text-white">SOON</span>
           <Switch id="unlock-hidden-levels" />
         </div>
-        <div className="flex items-center justify-between p-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg">
+        <div className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg">
           <span className="text-sm font-medium text-white">SOON</span>
           <Switch id="reveal-all-collectibles" />
         </div>
-        <div className="flex items-center justify-between p-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg">
+        <div className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg">
           <span className="text-sm font-medium text-white">SOON</span>
           <Switch id="activate-developer-mode" />
         </div>
