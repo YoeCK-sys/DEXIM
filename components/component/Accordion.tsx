@@ -27,7 +27,7 @@ const Accordion: React.FC<AccordionProps> = ({ i, expanded, setExpanded, title, 
   };
 
   return (
-    <div className="border rounded-lg overflow-hidden bg-opacity-70 backdrop-blur-lg bg-gradient-to-r from-gray-900">
+    <div className="border rounded-lg overflow-hidden bg-opacity-70 backdrop-blur-lg bg-gradient-to-r from-gray-900 ">
       <motion.header
         initial={false}
         animate={{ backgroundColor: isOpen ? "#2c2c2c" : "#2c2c2c" }}

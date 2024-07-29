@@ -11,7 +11,7 @@ const accordionData = [
     title: "AimBot Free",
     content: (
       <div className="space-y-4 ">
-        <div className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg">
+        <div className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-lg ">
           <span className="text-sm font-medium text-white">AimBot 5%</span>
           <Switch id="god-mode" />
         </div>
@@ -77,7 +77,7 @@ export function XDXD() {
       <main className="flex-1 overflow-auto p-4">
         <div className="space-y-4">
           {accordionData.map((item, index) => (
-            <Card key={index} className="bg-gray-800 bg-opacity-0 text-white backdrop-blur-lg border-none">
+            <Card key={index} className="bg-gray-800 bg-opacity-0 text-white backdrop-blur-lg border-none w-full">
               <CardHeader>
                 <Accordion
                   i={index}
