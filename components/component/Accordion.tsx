@@ -62,7 +62,6 @@ const Accordion: React.FC<AccordionProps> = React.memo(({ i, expanded, setExpand
   );
 });
 
+Accordion.displayName = "Accordion";
+
 export default Accordion;
-
-
-
