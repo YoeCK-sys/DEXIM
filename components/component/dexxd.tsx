@@ -13,9 +13,13 @@ export function XDXD() {
   const handleSwitchChange = (option: string, isChecked: boolean) => {
     console.log(`Switch for ${option} is now ${isChecked ? 'ON' : 'OFF'}`); // Log for debugging
     if (isChecked) {
-      toast.success(`Activated: ${option}`);
+      toast.success(`Activated: ${option}`, {
+        autoClose: 2000, // Duración de 5 segundos
+      });
     } else {
-      toast.info(`Deactivated: ${option}`);
+      toast.info(`Deactivated: ${option}`, {
+        autoClose: 2000, // Duración de 3 segundos
+      });
     }
   };
 
@@ -65,7 +69,9 @@ export function XDXD() {
           ))}
         </div>
       </main>
-      <ToastContainer /> {/* Agrega el ToastContainer para mostrar notificaciones */}
+      <ToastContainer
+      theme="dark" // Usar el tema oscuro para todas las notificaciones
+      /> 
     </div>
   );
 }
