@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/free/page.jsx", "app/free/page.jsx", "components/component/Accordion.jsx", "components/ui/input.jsx", "components/ui/button.jsx"],
   "exclude": ["node_modules"]
 }

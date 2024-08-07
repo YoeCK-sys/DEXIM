@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -14,9 +14,14 @@ export const Login: React.FC = () => {
   const [key, setKey] = useState<string>('');
   const [error, setError] = useState<string | null>(null);
   const [showDialog, setShowDialog] = useState<boolean>(false);
+  const [showUpdatesDialog, setShowUpdatesDialog] = useState<boolean>(true); // Inicialmente true para que se muestre al cargar la página
   const [expiryDate, setExpiryDate] = useState<string>('');
   const [role, setRole] = useState<string>('');
   const router = useRouter();
+
+  useEffect(() => {
+    setShowUpdatesDialog(true);
+  }, []);
 
   const handleLogin = async () => {
     const { authenticated, error: authError, role: userRole, expiryDate: userExpiryDate } = await authenticateUser({ username, key });
@@ -41,6 +46,11 @@ export const Login: React.FC = () => {
     }
   };
 
+  const handleUpdatesDialogClose = () => {
+    setShowUpdatesDialog(false);
+    // No redirige a ninguna página; solo cierra el diálogo
+  };
+
   const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
   };
@@ -52,7 +62,7 @@ export const Login: React.FC = () => {
   return (
     <div className="flex flex-col w-full min-h-screen bg-gradient-to-r from-gray-900 to-black text-white">
       <header className="flex items-center h-16 px-4 border-b border-gray-700 shrink-0 md:px-6">
-        <h1 className="text-lg font-semibold">Dex Exploit</h1>
+        <h1 className="text-lg font-semibold">AetherX </h1>
       </header>
       <main className="flex-1 flex items-center justify-center p-4 md:p-6">
         <Card className="w-full max-w-md bg-gray-900 bg-opacity-10 border border-gray-700 text-white backdrop-blur-lg">
@@ -99,11 +109,17 @@ export const Login: React.FC = () => {
           <Dialog 
             title="Bienvenido"
             content={`Hola ${username}, tu cuenta es de nivel ${role.toUpperCase()} y expira el ${expiryDate}.`}
-            onClose={handleDialogClose}
+            onClose={handleDialogClose} // Redirecciona al cerrar
+          />
+        )}
+        {showUpdatesDialog && (
+          <Dialog 
+            title="Cambios Recientes"
+            content="Aquí te presentamos los cambios más recientes en la aplicación: ..."
+            onClose={handleUpdatesDialogClose} // Solo cierra
           />
         )}
       </AnimatePresence>
     </div>
   );
 };
-
