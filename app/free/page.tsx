@@ -1,6 +1,8 @@
 // pages/index.js o pages/index.tsx
 import React from 'react';
 import { XDXD } from '@/components/component/dexxd';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
