@@ -62,7 +62,9 @@ export const Login: React.FC = () => {
   return (
     <div className="flex flex-col w-full min-h-screen bg-gradient-to-r from-gray-900 to-black text-white">
       <header className="flex items-center h-16 px-4 border-b border-gray-700 shrink-0 md:px-6">
-        <h1 className="text-lg font-semibold">AetherX </h1>
+      <h1 className="text-lg font-semibold">AetherX </h1>
+      <img src="logoxs.png" alt="AetherX Logo" className="h-14 mr-4" />
+
       </header>
       <main className="flex-1 flex items-center justify-center p-4 md:p-6">
         <Card className="w-full max-w-md bg-gray-900 bg-opacity-10 border border-gray-700 text-white backdrop-blur-lg">
