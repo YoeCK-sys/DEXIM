@@ -119,8 +119,8 @@ export const Login: React.FC = () => {
            <>
              <p>Aquí te presentamos los cambios más recientes en la aplicación:</p>
              <ul>
-               <li>Se ha mejorado las animaciones.</li>
-               <li>Las animaciones son más fluidas en dispositivos gama baja.</li>
+               <li>*Se ha mejorado las animaciones.</li>
+               <li>*Las animaciones son más fluidas en dispositivos gama baja.</li>
              </ul>
            </>
          }
