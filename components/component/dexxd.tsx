@@ -6,6 +6,7 @@ import { Card, CardHeader } from "@/components/ui/card";
 import { Switch } from "@/components/ui/switch";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './push.css';
 
 export function XDXD() {
   const [expanded, setExpanded] = useState<number | false>(false);
@@ -71,6 +72,7 @@ export function XDXD() {
       </main>
       <ToastContainer
       theme="dark" // Usar el tema oscuro para todas las notificaciones
+        className="toast-container-center-down"
       /> 
     </div>
   );

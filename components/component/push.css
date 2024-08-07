@@ -1,0 +1,6 @@
+.toast-container-center-down {
+    top: auto !important;
+    bottom: 10px !important; /* Ajusta esta distancia según sea necesario */
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
