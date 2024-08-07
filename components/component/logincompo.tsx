@@ -113,13 +113,20 @@ export const Login: React.FC = () => {
           />
         )}
         {showUpdatesDialog && (
-          <Dialog 
-            title="Cambios Recientes"
-            content="Aquí te presentamos los cambios más recientes en la aplicación:
-            *Se ha mejorado las animaciones
-            *las animaciones son mas fluidas en dispositivos gama baja"
-            onClose={handleUpdatesDialogClose} // Solo cierra
-          />
+         <Dialog 
+         title="Cambios Recientes"
+         content={
+           <>
+             <p>Aquí te presentamos los cambios más recientes en la aplicación:</p>
+             <ul>
+               <li>Se ha mejorado las animaciones.</li>
+               <li>Las animaciones son más fluidas en dispositivos gama baja.</li>
+             </ul>
+           </>
+         }
+         onClose={handleUpdatesDialogClose} // Solo cierra
+       />       
+
         )}
       </AnimatePresence>
     </div>
