@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 interface DialogProps {
   title: string;
-  content: string;
+  content: React.ReactNode; // Cambiar de 'string' a 'React.ReactNode'
   onClose: () => void;
 }
 
